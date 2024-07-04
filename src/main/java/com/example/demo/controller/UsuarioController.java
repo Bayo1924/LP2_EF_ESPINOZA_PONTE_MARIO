@@ -45,6 +45,7 @@ public class UsuarioController {
 	public String login(UsuarioEntity usuarioEntity, Model model, HttpSession session) {
 		boolean usuarioValido = usuarioService.validarUsuario(usuarioEntity, session);
 		if(usuarioValido) {
+			System.out.println("Esto se deberia ejecutar");
 			return "redirect:/menu";
 		}
 		model.addAttribute("loginInvalido", "No existe el usuario");
